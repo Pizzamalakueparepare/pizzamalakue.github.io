@@ -205,75 +205,94 @@ Facebook
 
 <script>
 function tambah(item) {
-var el = document.getElementById(item);
-el.innerText = parseInt(el.innerText) + 1;
-hitungTotal();
+  var el = document.getElementById(item);
+  el.innerText = parseInt(el.innerText) + 1;
+  hitungTotal();
 }
-function kurang(item) {
-var el = document.getElementById(item);
-var val = parseInt(el.innerText);
-if(val > 0) {
-el.innerText = val - 1;
-hitungTotal();
-}
-function hitungTotal() {
-var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil'];
-var harga = [27000,26000,22000,30000,35000,26000,40000,25000,20000];
-var subtotal = 0;
-for(var i=0; i<items.length; i++) {
-subtotal += parseInt(document.getElementById(items[i]).innerText) * harga[i];
-}
-document.getElementById('total').innerText = 'Rp ' + subtotal.toLocaleString('id-ID');
-}
-function kirimWA() {
-var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil'];
-var nama = ['Chicken','Corn Cheese','Beef Slice','Beef','Mix Topping','Sosis Jamur','Keju Lovers','Sosis Besar','Sosis Kecil'];
-var harga = [27000,26000,22000,30000,35000,26000,40000,25000,20000];
-var totalItem = 0; var subtotal = 0; var teks = 'Halo Pizza Malakue Parepare, saya mau pesan:\n';
-for(var i=0; i<items.length; i++) {
-var jml = parseInt(document.getElementById(items[i]).innerText);
-if(jml > 0) {
-totalItem += jml;
-subtotal += jml * harga[i];
-teks += '- Pizza ' + nama[i] + ' x' + jml + ' = Rp ' + (jml*harga[i]).toLocaleString('id-ID') + '\n';
-}
-if(totalItem === 0) { alert('PILIH MENU KI DULU!!!'); return; }
-teks += '\nTotal Bayar: Rp ' + subtotal.toLocaleString('id-ID');
-window.open('https://wa.me/6285123850019?text=' + encodeURIComponent(teks), '_blank');
-tampilkanPopup();
-for(var i=0; i<items.length; i++) document.getElementById(items[i]).innerText = '0';
-hitungTotal();
-}
-function balikAwal() { document.getElementById('page1').style.display = 'flex'; document.getElementById('page2').style.display = 'none'; }
-function bukaMenu() { document.getElementById('page1').style.display = 'none'; document.getElementById('page2').style.display = 'flex'; }
-function cekJamBuka() {
-var sekarang = new Date().getHours();
-var status = '';
-if (sekarang >= 10 && sekarang < 21) {
-status = '🟢 BUKA - 10.00 s/d 21.00 WITA';
-document.getElementById('statusToko').style.color = '#16a34a';
-if(document.getElementById('statusToko2')) document.getElementById('statusToko2').style.color = '#16a34a';
-} else {
-status = '🔴 TUTUP - Buka jam 10.00 WITA';
-document.getElementById('statusToko').style.color = '#dc2626';
-if(document.getElementById('statusToko2')) document.getElementById('statusToko2').style.color = '#dc2626';
-}
-document.getElementById('statusToko').innerText = status;
-if(document.getElementById('statusToko2')) document.getElementById('statusToko2').innerText = status;
-}
-function tampilkanPopup() { document.getElementById('popupSukses').style.display = 'flex'; }
-function tutupPopup() { document.getElementById('popupSukses').style.display = 'none'; }
-hitungTotal(); cekJamBuka();
-</script>
 
-<div id="popupSukses" class="popup-overlay">
-<div class="popup-box">
-<div class="popup-icon">🎉</div>
-<h2>Pesanan Terkirim!</h2>
-<p>Terima Kasih sudah melakukan pembelian di<br>Pizza Malakue Parepare</p>
-<p class="popup-doa">Sehat Selalu, Murah Rejeki, Panjang Umur<br>serta dimudahkan selalu urusannya!!!</p>
-<button class="popup-btn" onclick="tutupPopup()">Aamiin 🙏</button>
-</div>
-</div>
-</body>
-</html>
+function kurang(item) {
+  var el = document.getElementById(item);
+  var val = parseInt(el.innerText);
+  if(val > 0) {
+    el.innerText = val - 1;
+    hitungTotal();
+  }
+}
+
+function hitungTotal() {
+  var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil'];
+  var harga = [27000,26000,22000,30000,35000,26000,40000,25000,20000];
+  var subtotal = 0;
+  for(var i=0; i<items.length; i++) {
+    subtotal += parseInt(document.getElementById(items[i]).innerText) * harga[i];
+  }
+  document.getElementById('total').innerText = 'Rp ' + subtotal.toLocaleString('id-ID');
+}
+
+function kirimWA() {
+  var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil'];
+  var nama = ['Chicken','Corn Cheese','Beef Slice','Beef','Mix Topping','Sosis Jamur','Keju Lovers','Sosis Besar','Sosis Kecil'];
+  var harga = [27000,26000,22000,30000,35000,26000,40000,25000,20000];
+  var totalItem = 0;
+  var subtotal = 0;
+  var teks = 'Halo Pizza Malakue Parepare, saya mau pesan:\n';
+
+  for(var i=0; i<items.length; i++) {
+    var jml = parseInt(document.getElementById(items[i]).innerText);
+    if(jml > 0) {
+      totalItem += jml;
+      subtotal += jml * harga[i];
+      teks += '- Pizza ' + nama[i] + ' x' + jml + ' = Rp ' + (jml*harga[i]).toLocaleString('id-ID') + '\n';
+    }
+  }
+
+  if(totalItem === 0) {
+    alert('PILIH MENU KI DULU!!!');
+    return;
+  }
+
+  teks += '\nTotal Bayar: Rp ' + subtotal.toLocaleString('id-ID');
+  window.open('https://wa.me/6285123850019?text=' + encodeURIComponent(teks), '_blank');
+  tampilkanPopup();
+
+  for(var i=0; i<items.length; i++) document.getElementById(items[i]).innerText = '0';
+  hitungTotal();
+}
+
+function balikAwal() {
+  document.getElementById('page1').style.display = 'flex';
+  document.getElementById('page2').style.display = 'none';
+}
+
+function bukaMenu() {
+  document.getElementById('page1').style.display = 'none';
+  document.getElementById('page2').style.display = 'flex';
+}
+
+function cekJamBuka() {
+  var sekarang = new Date().getHours();
+  var status = '';
+  if (sekarang >= 10 && sekarang < 21) {
+    status = '🟢 BUKA - 10.00 s/d 21.00 WITA';
+    document.getElementById('statusToko').style.color = '#16a34a';
+    if(document.getElementById('statusToko2')) document.getElementById('statusToko2').style.color = '#16a34a';
+  } else {
+    status = '🔴 TUTUP - Buka jam 10.00 WITA';
+    document.getElementById('statusToko').style.color = '#dc2626';
+    if(document.getElementById('statusToko2')) document.getElementById('statusToko2').style.color = '#dc2626';
+  }
+  document.getElementById('statusToko').innerText = status;
+  if(document.getElementById('statusToko2')) document.getElementById('statusToko2').innerText = status;
+}
+
+function tampilkanPopup() {
+  document.getElementById('popupSukses').style.display = 'flex';
+}
+
+function tutupPopup() {
+  document.getElementById('popupSukses').style.display = 'none';
+}
+
+hitungTotal();
+cekJamBuka();
+</script>
