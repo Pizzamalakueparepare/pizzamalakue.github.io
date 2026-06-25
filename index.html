@@ -188,7 +188,7 @@ Facebook
 
 <!-- MENU BARU DIMULAI DI SINI -->
 <div class="card">
-<img src="pizza-coklat-mozarella.jpg" alt="Pizza Coklat Keju Cedar" class="menu-img" loading="lazy">
+<img src="pizza-coklat-keju-cedar.jpg" alt="Pizza Coklat Keju Cedar" class="menu-img" loading="lazy">
 <h3 style="font-size: 14px;">Coklat Keju Cedar</h3>
 <p class="price">31rb</p>
 <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
@@ -199,13 +199,13 @@ Facebook
 </div>
 
 <div class="card">
-<img src="pizza-coklat-keju-cedar.jpg" alt="Pizza Coklat Keju Cedar" class="menu-img" loading="lazy">
-<h3 style="font-size: 14px;">Coklat Mozarella</h3>
+<img src="pizza-coklat-mocarella.jpg" alt="Pizza Coklat Mocarella" class="menu-img" loading="lazy">
+<h3 style="font-size: 14px;">Coklat Mocarella</h3>
 <p class="price">36rb</p>
 <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
-<button onclick="kurang('coklatMozarella')" class="qty-btn qty-minus">-</button>
-<span id="coklatMozarella" style="font-weight: bold; width: 20px;">0</span>
-<button onclick="tambah('coklatMozarella')" class="qty-btn qty-plus">+</button>
+<button onclick="kurang('coklatMocarella')" class="qty-btn qty-minus">-</button>
+<span id="coklatMocarella" style="font-weight: bold; width: 20px;">0</span>
+<button onclick="tambah('coklatMocarella')" class="qty-btn qty-plus">+</button>
 </div>
 </div>
 <!-- MENU BARU SELESAI -->
@@ -246,7 +246,7 @@ function kurang(item) {
 }
 
 function hitungTotal() {
-  var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil','coklatKejuCedar','coklatMozarella'];
+  var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil','coklatKejuCedar','coklatMocarella'];
   var harga = [30000,29000,25000,33000,38000,29000,43000,28000,23000,31000,36000];
   var subtotal = 0;
   for(var i=0; i<items.length; i++) {
@@ -256,8 +256,8 @@ function hitungTotal() {
 }
 
 function kirimWA() {
-  var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil','coklatKejuCedar','coklatMozarella'];
-  var nama = ['Chicken','Corn Cheese','Beef Slice','Beef','Mix Topping','Sosis Jamur','Keju Lovers','Sosis Besar','Sosis Kecil','Coklat Keju Cedar','Coklat Mozarella'];
+  var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil','coklatKejuCedar','coklatMocarella'];
+  var nama = ['Chicken','Corn Cheese','Beef Slice','Beef','Mix Topping','Sosis Jamur','Keju Lovers','Sosis Besar','Sosis Kecil','Coklat Keju Cedar','Coklat Mocarella'];
   var harga = [30000,29000,25000,33000,38000,29000,43000,28000,23000,31000,36000];
   var totalItem = 0;
   var subtotal = 0;
