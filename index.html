@@ -87,6 +87,63 @@ Facebook
 <h2 style="font-size: 20px; text-align: center; margin: 16px 0;">Pilih Menu Favoritmu</h2>
 
 <div class="grid-2">
+<!-- Urutan: Harga Tertinggi ke Terendah -->
+
+<div class="card">
+<img src="pizza-keju-lovers.jpg" alt="Pizza Keju Lovers" class="menu-img" loading="lazy">
+<h3 style="font-size: 14px;">Keju Lovers</h3>
+<p class="price">43rb</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
+<button onclick="kurang('kejuLovers')" class="qty-btn qty-minus">-</button>
+<span id="kejuLovers" style="font-weight: bold; width: 20px;">0</span>
+<button onclick="tambah('kejuLovers')" class="qty-btn qty-plus">+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="pizza-mix-toping.jpg" alt="Pizza Mix Topping" class="menu-img" loading="lazy">
+<h3 style="font-size: 14px;">Mix Topping</h3>
+<p class="price">38rb</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
+<button onclick="kurang('mixTopping')" class="qty-btn qty-minus">-</button>
+<span id="mixTopping" style="font-weight: bold; width: 20px;">0</span>
+<button onclick="tambah('mixTopping')" class="qty-btn qty-plus">+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="pizza-coklat-mocarella.jpg" alt="Pizza Coklat Mocarella" class="menu-img" loading="lazy">
+<h3 style="font-size: 14px;">Coklat Mocarella</h3>
+<p class="price">36rb</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
+<button onclick="kurang('coklatMocarella')" class="qty-btn qty-minus">-</button>
+<span id="coklatMocarella" style="font-weight: bold; width: 20px;">0</span>
+<button onclick="tambah('coklatMocarella')" class="qty-btn qty-plus">+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="pizza-beef.jpg" alt="Pizza Beef" class="menu-img" loading="lazy">
+<h3 style="font-size: 14px;">Beef</h3>
+<p class="price">33rb</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
+<button onclick="kurang('beef')" class="qty-btn qty-minus">-</button>
+<span id="beef" style="font-weight: bold; width: 20px;">0</span>
+<button onclick="tambah('beef')" class="qty-btn qty-plus">+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="pizza-coklat-keju-cedar.jpg" alt="Pizza Coklat Keju Cedar" class="menu-img" loading="lazy">
+<h3 style="font-size: 14px;">Coklat Keju Cedar</h3>
+<p class="price">31rb</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
+<button onclick="kurang('coklatKejuCedar')" class="qty-btn qty-minus">-</button>
+<span id="coklatKejuCedar" style="font-weight: bold; width: 20px;">0</span>
+<button onclick="tambah('coklatKejuCedar')" class="qty-btn qty-plus">+</button>
+</div>
+</div>
+
 <div class="card">
 <img src="pizza-chicken.jpg" alt="Pizza Chicken" class="menu-img" loading="lazy">
 <h3 style="font-size: 14px;">Chicken</h3>
@@ -110,39 +167,6 @@ Facebook
 </div>
 
 <div class="card">
-<img src="pizza-beef-slice.jpg" alt="Pizza Beef Slice" class="menu-img" loading="lazy">
-<h3 style="font-size: 14px;">Beef Slice</h3>
-<p class="price">25rb</p>
-<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
-<button onclick="kurang('beefSlice')" class="qty-btn qty-minus">-</button>
-<span id="beefSlice" style="font-weight: bold; width: 20px;">0</span>
-<button onclick="tambah('beefSlice')" class="qty-btn qty-plus">+</button>
-</div>
-</div>
-
-<div class="card">
-<img src="pizza-beef.jpg" alt="Pizza Beef" class="menu-img" loading="lazy">
-<h3 style="font-size: 14px;">Beef</h3>
-<p class="price">33rb</p>
-<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
-<button onclick="kurang('beef')" class="qty-btn qty-minus">-</button>
-<span id="beef" style="font-weight: bold; width: 20px;">0</span>
-<button onclick="tambah('beef')" class="qty-btn qty-plus">+</button>
-</div>
-</div>
-
-<div class="card">
-<img src="pizza-mix-toping.jpg" alt="Pizza Mix Topping" class="menu-img" loading="lazy">
-<h3 style="font-size: 14px;">Mix Topping</h3>
-<p class="price">38rb</p>
-<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
-<button onclick="kurang('mixTopping')" class="qty-btn qty-minus">-</button>
-<span id="mixTopping" style="font-weight: bold; width: 20px;">0</span>
-<button onclick="tambah('mixTopping')" class="qty-btn qty-plus">+</button>
-</div>
-</div>
-
-<div class="card">
 <img src="pizza-sosis-jamur.jpg" alt="Pizza Sosis Jamur" class="menu-img" loading="lazy">
 <h3 style="font-size: 14px;">Sosis Jamur</h3>
 <p class="price">29rb</p>
@@ -150,17 +174,6 @@ Facebook
 <button onclick="kurang('sosisJamur')" class="qty-btn qty-minus">-</button>
 <span id="sosisJamur" style="font-weight: bold; width: 20px;">0</span>
 <button onclick="tambah('sosisJamur')" class="qty-btn qty-plus">+</button>
-</div>
-</div>
-
-<div class="card">
-<img src="pizza-keju-lovers.jpg" alt="Pizza Keju Lovers" class="menu-img" loading="lazy">
-<h3 style="font-size: 14px;">Keju Lovers</h3>
-<p class="price">43rb</p>
-<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
-<button onclick="kurang('kejuLovers')" class="qty-btn qty-minus">-</button>
-<span id="kejuLovers" style="font-weight: bold; width: 20px;">0</span>
-<button onclick="tambah('kejuLovers')" class="qty-btn qty-plus">+</button>
 </div>
 </div>
 
@@ -176,6 +189,17 @@ Facebook
 </div>
 
 <div class="card">
+<img src="pizza-beef-slice.jpg" alt="Pizza Beef Slice" class="menu-img" loading="lazy">
+<h3 style="font-size: 14px;">Beef Slice</h3>
+<p class="price">25rb</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
+<button onclick="kurang('beefSlice')" class="qty-btn qty-minus">-</button>
+<span id="beefSlice" style="font-weight: bold; width: 20px;">0</span>
+<button onclick="tambah('beefSlice')" class="qty-btn qty-plus">+</button>
+</div>
+</div>
+
+<div class="card">
 <img src="pizza-sosis-kecil.jpg" alt="Pizza Sosis Kecil" class="menu-img" loading="lazy">
 <h3 style="font-size: 14px;">Sosis Kecil</h3>
 <p class="price">23rb</p>
@@ -185,30 +209,6 @@ Facebook
 <button onclick="tambah('sosisKecil')" class="qty-btn qty-plus">+</button>
 </div>
 </div>
-
-<!-- MENU BARU DIMULAI DI SINI -->
-<div class="card">
-<img src="pizza-coklat-keju-cedar.jpg" alt="Pizza Coklat Keju Cedar" class="menu-img" loading="lazy">
-<h3 style="font-size: 14px;">Coklat Keju Cedar</h3>
-<p class="price">31rb</p>
-<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
-<button onclick="kurang('coklatKejuCedar')" class="qty-btn qty-minus">-</button>
-<span id="coklatKejuCedar" style="font-weight: bold; width: 20px;">0</span>
-<button onclick="tambah('coklatKejuCedar')" class="qty-btn qty-plus">+</button>
-</div>
-</div>
-
-<div class="card">
-<img src="pizza-coklat-mocarella.jpg" alt="Pizza Coklat Mocarella" class="menu-img" loading="lazy">
-<h3 style="font-size: 14px;">Coklat Mocarella</h3>
-<p class="price">36rb</p>
-<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
-<button onclick="kurang('coklatMocarella')" class="qty-btn qty-minus">-</button>
-<span id="coklatMocarella" style="font-weight: bold; width: 20px;">0</span>
-<button onclick="tambah('coklatMocarella')" class="qty-btn qty-plus">+</button>
-</div>
-</div>
-<!-- MENU BARU SELESAI -->
 
 </div>
 
@@ -246,8 +246,8 @@ function kurang(item) {
 }
 
 function hitungTotal() {
-  var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil','coklatKejuCedar','coklatMocarella'];
-  var harga = [30000,29000,25000,33000,38000,29000,43000,28000,23000,31000,36000];
+  var items = ['kejuLovers','mixTopping','coklatMocarella','beef','coklatKejuCedar','chicken','corncheese','sosisJamur','sosisBesar','beefSlice','sosisKecil'];
+  var harga = [43000,38000,36000,33000,31000,30000,29000,29000,28000,25000,23000];
   var subtotal = 0;
   for(var i=0; i<items.length; i++) {
     subtotal += parseInt(document.getElementById(items[i]).innerText) * harga[i];
@@ -256,9 +256,9 @@ function hitungTotal() {
 }
 
 function kirimWA() {
-  var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil','coklatKejuCedar','coklatMocarella'];
-  var nama = ['Chicken','Corn Cheese','Beef Slice','Beef','Mix Topping','Sosis Jamur','Keju Lovers','Sosis Besar','Sosis Kecil','Coklat Keju Cedar','Coklat Mocarella'];
-  var harga = [30000,29000,25000,33000,38000,29000,43000,28000,23000,31000,36000];
+  var items = ['kejuLovers','mixTopping','coklatMocarella','beef','coklatKejuCedar','chicken','corncheese','sosisJamur','sosisBesar','beefSlice','sosisKecil'];
+  var nama = ['Keju Lovers','Mix Topping','Coklat Mocarella','Beef','Coklat Keju Cedar','Chicken','Corn Cheese','Sosis Jamur','Sosis Besar','Beef Slice','Sosis Kecil'];
+  var harga = [43000,38000,36000,33000,31000,30000,29000,29000,28000,25000,23000];
   var totalItem = 0;
   var subtotal = 0;
   var teks = 'Halo Pizza Malakue Parepare, saya mau pesan:\n';
