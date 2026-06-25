@@ -185,6 +185,31 @@ Facebook
 <button onclick="tambah('sosisKecil')" class="qty-btn qty-plus">+</button>
 </div>
 </div>
+
+<!-- MENU BARU DIMULAI DI SINI -->
+<div class="card">
+<img src="pizza-coklat-keju-cedar.jpg" alt="Pizza Coklat Keju Cedar" class="menu-img" loading="lazy">
+<h3 style="font-size: 14px;">Coklat Keju Cedar</h3>
+<p class="price">31rb</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
+<button onclick="kurang('coklatKejuCedar')" class="qty-btn qty-minus">-</button>
+<span id="coklatKejuCedar" style="font-weight: bold; width: 20px;">0</span>
+<button onclick="tambah('coklatKejuCedar')" class="qty-btn qty-plus">+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="pizza-coklat-keju-cedar.jpg" alt="Pizza Coklat Mozarella" class="menu-img" loading="lazy">
+<h3 style="font-size: 14px;">Coklat Mozarella</h3>
+<p class="price">36rb</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
+<button onclick="kurang('coklatMozarella')" class="qty-btn qty-minus">-</button>
+<span id="coklatMozarella" style="font-weight: bold; width: 20px;">0</span>
+<button onclick="tambah('coklatMozarella')" class="qty-btn qty-plus">+</button>
+</div>
+</div>
+<!-- MENU BARU SELESAI -->
+
 </div>
 
 <button onclick="kirimWA()" class="btn-primary btn-order">🛒 Kirim Pesanan - <span id="total">Rp 0</span></button>
@@ -221,8 +246,8 @@ function kurang(item) {
 }
 
 function hitungTotal() {
-  var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil'];
-  var harga = [30000,29000,25000,33000,38000,29000,43000,28000,23000];
+  var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil','coklatKejuCedar','coklatMozarella'];
+  var harga = [30000,29000,25000,33000,38000,29000,43000,28000,23000,31000,36000];
   var subtotal = 0;
   for(var i=0; i<items.length; i++) {
     subtotal += parseInt(document.getElementById(items[i]).innerText) * harga[i];
@@ -231,9 +256,9 @@ function hitungTotal() {
 }
 
 function kirimWA() {
-  var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil'];
-  var nama = ['Chicken','Corn Cheese','Beef Slice','Beef','Mix Topping','Sosis Jamur','Keju Lovers','Sosis Besar','Sosis Kecil'];
-  var harga = [30000,29000,25000,33000,38000,29000,43000,28000,23000];
+  var items = ['chicken','corncheese','beefSlice','beef','mixTopping','sosisJamur','kejuLovers','sosisBesar','sosisKecil','coklatKejuCedar','coklatMozarella'];
+  var nama = ['Chicken','Corn Cheese','Beef Slice','Beef','Mix Topping','Sosis Jamur','Keju Lovers','Sosis Besar','Sosis Kecil','Coklat Keju Cedar','Coklat Mozarella'];
+  var harga = [30000,29000,25000,33000,38000,29000,43000,28000,23000,31000,36000];
   var totalItem = 0;
   var subtotal = 0;
   var teks = 'Halo Pizza Malakue Parepare, saya mau pesan:\n';
