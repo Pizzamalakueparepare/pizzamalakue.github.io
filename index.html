@@ -27,7 +27,15 @@
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, sans-serif; background: linear-gradient(180deg, #FFF3EB 0%, #FFEFD9 70%, #F5F7FF 100%); color: #3D2B1F; min-height: 100vh; }
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background:
+    linear-gradient(180deg, rgba(255,243,235,0.92) 0%, rgba(255,239,217,0.92) 70%, rgba(245,247,255,0.92) 100%),
+    url('logo.png') no-repeat center fixed;
+  background-size: 280px auto;
+  color: #3D2B1F;
+  min-height: 100vh;
+}
 .container { max-width: 480px; margin: 0 auto; padding: 16px; position: relative;}
 .back-btn { position: absolute; top: 20px; left: 0; font-size: 16px; color: #d2691e; text-decoration: none; font-weight: 600; z-index: 10; background: transparent; border: none; cursor: pointer; }
 header { padding-top: 70px; text-align: center; }
