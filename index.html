@@ -17,11 +17,12 @@ body {
   color: #3D2B1F;
   min-height: 100vh;
 }
-.container { max-width: 480px; margin: 0 auto; padding: 16px; position: relative; padding-bottom: 280px; }
+.container { max-width: 480px; margin: 0 auto; padding: 16px; position: relative; }
+.container.page2-active { padding-bottom: 280px; } /* padding cuma aktif di page2 */
 
 .back-btn { position: absolute; top: 20px; left: 0; font-size: 16px; color: #d2691e; text-decoration: none; font-weight: 600; z-index: 10; background: transparent; border: none; cursor: pointer; }
 header { padding-top: 70px; text-align: center; }
-.btn-primary { width: 100%; background: linear-gradient(135deg, #8B0000 0%, #B22222 100%); color: white; padding: 16px; border: none; border-radius: 12px; font-weight: bold; font-size: 16px; cursor: pointer; box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3); transition: transform 0.2s; }
+.btn-primary { width: 100%; background: linear-gradient(135deg, #8B0000 0%, #B22222 100%); color: white; padding: 16px; border: none; border-radius: 12px; font-weight: bold; font-size: 16px; cursor: pointer; box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3); transition: transform 0.2s; position: relative; z-index: 1; } /* kasih z-index */
 .btn-primary:active { transform: scale(0.98); }
 
 .card { background: white; border-radius: 14px; padding: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-align: center; }
@@ -41,39 +42,39 @@ header { padding-top: 70px; text-align: center; }
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: #E8F5E9; /* hijau muda */
-  color: #2E7D32; /* hijau tua */
+  background: #E8F5E9;
+  color: #2E7D32;
   padding: 8px 16px;
   border-radius: 50px;
   font-size: 12px;
   font-weight: bold;
   margin: 8px auto;
   width: fit-content;
-  animation: pillBlink 1.5s infinite; /* <-- LATAR IKUT KEDIP */
+  animation: pillBlink 1.5s infinite;
 }
 .status-pill.tutup {
-  background: #FFEBEE; /* merah muda */
-  color: #C62828; /* merah tua */
-  animation: pillBlinkTutup 1.5s infinite; /* <-- LATAR IKUT KEDIP MERAH */
+  background: #FFEBEE;
+  color: #C62828;
+  animation: pillBlinkTutup 1.5s infinite;
 }
 .status-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #2E7D32; /* hijau */
+  background: #2E7D32;
   animation: dotBlink 1.2s infinite;
 }
 .status-pill.tutup.status-dot {
-  background: #C62828; /* merah */
+  background: #C62828;
 }
 
 @keyframes pillBlink {
  0%, 100% { background: #E8F5E9; }
- 50% { background: #C8E6C9; } /* lebih terang pas kedip */
+ 50% { background: #C8E6C9; }
 }
 @keyframes pillBlinkTutup {
  0%, 100% { background: #FFEBEE; }
- 50% { background: #FFCDD2; } /* lebih terang pas kedip */
+ 50% { background: #FFCDD2; }
 }
 @keyframes dotBlink {
  0%, 100% { opacity: 1; transform: scale(1); }
@@ -93,6 +94,7 @@ header { padding-top: 70px; text-align: center; }
   padding: 12px 16px;
   box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
   z-index: 999;
+  display: none; /* default sembunyi */
 }
 
 .order-summary {
@@ -120,7 +122,7 @@ header { padding-top: 70px; text-align: center; }
 </style>
 </head>
 <body>
-<div class="container">
+<div id="mainContainer" class="container">
 
 <!-- HALAMAN 1: WELCOME -->
 <div id="page1" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; text-align: center; gap: 16px;">
@@ -171,18 +173,9 @@ header { padding-top: 70px; text-align: center; }
 </div>
 
 <div style="text-align:center; padding:30px 20px; margin-top:25px;">
-<h3 style="color:#d9534f;">INFO PEMESANAN</h3>
+<h3 style="color:#d9534f;">Info Pemesanan</h3>
 <p>📱 WhatsApp: <b style="color:#d9534f;">0851-2385-0019</b></p>
 <p>📍 Jl. LIU BULOE, DEPAN GERBANG BTN BUMI NANGGALA RAYA, WEKKE'E, PAREPARE</p>
-<p>⏱️ Estimasi: 10-15 menit</p>
-<p>📦 Area: Parepare & Sekitarnya</p>
-<div style="display:flex; gap:10px; justify-content:center; margin-top:15px;">
-<a href="tel:085123850019" style="padding:10px 20px; background:#007bff; color:white; border-radius:8px; text-decoration:none;">📞 Telepon</a>
-<a href="https://maps.app.goo.gl/hetLzqbGh9ckQxdx9" target="_blank" style="padding:10px 20px; background:#555; color:white; border-radius:8px; text-decoration:none;">📍 Lokasi</a>
-</div>
-<p style="margin-top:20px; font-size:12px; color:#888;">© 2025 Pizza Malakue Parepare</p>
-</div>
-</div>
 </div>
 
 <!-- FOOTER RINCIAN + TOMBOL -->
@@ -243,8 +236,18 @@ function kirimWA() {
   hitungTotal();
 }
 
-function balikAwal() { document.getElementById('page1').style.display = 'flex'; document.getElementById('page2').style.display = 'none'; }
-function bukaMenu() { document.getElementById('page1').style.display = 'none'; document.getElementById('page2').style.display = 'flex'; }
+function balikAwal() {
+  document.getElementById('page1').style.display = 'flex';
+  document.getElementById('page2').style.display = 'none';
+  document.getElementById('orderFooter').style.display = 'none'; // sembunyikan footer
+  document.getElementById('mainContainer').classList.remove('page2-active'); // hapus padding
+}
+function bukaMenu() {
+  document.getElementById('page1').style.display = 'none';
+  document.getElementById('page2').style.display = 'flex';
+  document.getElementById('orderFooter').style.display = 'block'; // munculkan footer
+  document.getElementById('mainContainer').classList.add('page2-active'); // kasih padding
+}
 
 function cekJamBuka() {
   var sekarang = new Date().getHours();
