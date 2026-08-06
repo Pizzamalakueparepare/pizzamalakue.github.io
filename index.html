@@ -17,14 +17,11 @@ body {
   color: #3D2B1F;
   min-height: 100vh;
 }
-.container { max-width: 480px; margin: 0 auto; padding: 16px; position: relative; }
-.container.page2-active { padding-bottom: 280px; } /* padding cuma aktif di page2 */
-
+.container { max-width: 480px; margin: 0 auto; padding: 16px; position: relative; padding-bottom: 100px; }
 .back-btn { position: absolute; top: 20px; left: 0; font-size: 16px; color: #d2691e; text-decoration: none; font-weight: 600; z-index: 10; background: transparent; border: none; cursor: pointer; }
 header { padding-top: 70px; text-align: center; }
-.btn-primary { width: 100%; background: linear-gradient(135deg, #8B0000 0%, #B22222 100%); color: white; padding: 16px; border: none; border-radius: 12px; font-weight: bold; font-size: 16px; cursor: pointer; box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3); transition: transform 0.2s; position: relative; z-index: 1; } /* kasih z-index */
+.btn-primary { width: 100%; background: linear-gradient(135deg, #8B0000 0%, #B22222 100%); color: white; padding: 16px; border: none; border-radius: 12px; font-weight: bold; font-size: 16px; cursor: pointer; box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3); transition: transform 0.2s; }
 .btn-primary:active { transform: scale(0.98); }
-
 .card { background: white; border-radius: 14px; padding: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-align: center; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .menu-img { width: 100%; height: 100px; object-fit: cover; border-radius: 10px; margin-bottom: 8px; }
@@ -35,82 +32,17 @@ header { padding-top: 70px; text-align: center; }
 .tiktok-btn { background: #000; color: white; padding: 16px; border-radius: 12px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; }
 .fb-btn { background: #1877F2; color: white; padding: 16px; border-radius: 12px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: bold; font-size: 16px; margin-top: 8px; }
 .text-brown { color: #5D4037; }
-
-/* STYLE JAM BUKA TUTUP PILL KEDIP */
-.status-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background: #E8F5E9;
-  color: #2E7D32;
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: 12px;
-  font-weight: bold;
-  margin: 8px auto;
-  width: fit-content;
-  animation: pillBlink 1.5s infinite;
-}
-.status-pill.tutup {
-  background: #FFEBEE;
-  color: #C62828;
-  animation: pillBlinkTutup 1.5s infinite;
-}
-.status-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #2E7D32;
-  animation: dotBlink 1.2s infinite;
-}
-.status-pill.tutup.status-dot {
-  background: #C62828;
-}
-
-@keyframes pillBlink {
- 0%, 100% { background: #E8F5E9; }
- 50% { background: #C8E6C9; }
-}
-@keyframes pillBlinkTutup {
- 0%, 100% { background: #FFEBEE; }
- 50% { background: #FFCDD2; }
-}
-@keyframes dotBlink {
- 0%, 100% { opacity: 1; transform: scale(1); }
- 50% { opacity: 0.4; transform: scale(0.8); }
-}
-
-/* FOOTER FIXED BUAT RINCIAN + TOMBOL */
-.order-footer {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 480px;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(8px);
-  padding: 12px 16px;
-  box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
-  z-index: 999;
-  display: none; /* default sembunyi */
-}
-
-.order-summary {
-  background: #FFF5F0;
-  border: 2px dashed #B22222;
-  border-radius: 12px;
-  padding: 10px;
-  margin-bottom: 10px;
-  display: none;
-  max-height: 120px;
-  overflow-y: auto;
-}
+.status-pill { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: #E8F5E9; color: #2E7D32; padding: 8px 16px; border-radius: 50px; font-size: 12px; font-weight: bold; margin: 8px auto; width: fit-content; animation: pillBlink 1.5s infinite; }
+.status-pill.tutup { background: #FFEBEE; color: #C62828; animation: pillBlinkTutup 1.5s infinite; }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; background: #2E7D32; animation: dotBlink 1.2s infinite; }
+@keyframes pillBlink { 0%, 100% { background: #E8F5E9; } 50% { background: #C8E6C9; } }
+@keyframes pillBlinkTutup { 0%, 100% { background: #FFEBEE; } 50% { background: #FFCDD2; } }
+@keyframes dotBlink { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.8); } }
+.order-footer { position: sticky; bottom: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); padding: 12px 0; margin-top: 20px; box-shadow: 0 -4px 15px rgba(0,0,0,0.1); z-index: 10; }
+.order-summary { background: #FFF5F0; border: 2px dashed #B22222; border-radius: 12px; padding: 10px; margin-bottom: 10px; display: none; max-height: 120px; overflow-y: auto; }
 .order-summary h3 { font-size: 15px; margin-bottom: 6px; color: #8B0000; }
 .order-item { display: flex; justify-content: space-between; font-size: 13px; margin: 3px 0; }
 .order-total { border-top: 1px solid #ddd; margin-top: 6px; padding-top: 6px; font-weight: bold; font-size: 14px; }
-
 .popup-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 9999; }
 .popup-box { background: white; padding: 30px 25px; border-radius: 15px; text-align: center; max-width: 320px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); animation: popUp 0.3s ease; }
 .popup-icon { font-size: 50px; margin-bottom: 10px; }
@@ -122,39 +54,24 @@ header { padding-top: 70px; text-align: center; }
 </style>
 </head>
 <body>
-<div id="mainContainer" class="container">
+<div class="container">
 
-<!-- HALAMAN 1: WELCOME -->
-<div id="page1" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; text-align: center; gap: 16px;">
+<div id="page1" style="min-height: 90vh; display: flex; flex-direction: column; justify-content: center; text-align: center; gap: 16px;">
 <p class="text-brown" style="font-size: 14px;">Terima kasih sudah klik Link Tautannya</p>
 <h1 style="font-size: 32px; color: #1a1a1a;">WELCOME!!!</h1>
 <h2 style="font-size: 20px;">PIZZA MALAKUE PAREPARE</h2>
 <p class="text-brown" style="font-size: 14px;">Home Made, Fresh From The Oven</p>
-
-<div id="statusToko" class="status-pill">
-  <span class="status-dot"></span>
-  <span id="statusText">BUKA - 10.00 s/d 21.00 WITA</span>
-</div>
-
+<div id="statusToko" class="status-pill"><span class="status-dot"></span><span id="statusText">BUKA - 10.00 s/d 21.00 WITA</span></div>
 <button onclick="bukaMenu()" class="btn-primary">🍕 Buat Pesanan Anda Disini</button>
 <a href="https://www.tiktok.com/@malakue_pizza" target="_blank" class="tiktok-btn">TikTok</a>
 <a href="https://www.facebook.com/share/18VcLYWzxs/" target="_blank" class="fb-btn">Facebook</a>
 </div>
 
-<!-- HALAMAN 2: MENU -->
-<div id="page2" style="display:none; flex-direction:column; min-height:100vh;">
+<div id="page2" style="display:none;">
 <header style="text-align:center; padding:16px 0; position:relative;">
 <button onclick="balikAwal()" class="back-btn">← Kembali</button>
-<div style="pointer-events:none;">
-<h1 style="font-size:20px;">Pizza Malakue Parepare</h1>
-<p class="text-brown" style="font-size:14px;">Home Made, Fresh From The Oven</p>
-
-<div id="statusToko2" class="status-pill">
-  <span class="status-dot"></span>
-  <span id="statusText2">BUKA - 10.00 s/d 21.00 WITA</span>
-</div>
-
-</div>
+<div><h1 style="font-size:20px;">Pizza Malakue Parepare</h1><p class="text-brown" style="font-size:14px;">Home Made, Fresh From The Oven</p>
+<div id="statusToko2" class="status-pill"><span class="status-dot"></span><span id="statusText2">BUKA - 10.00 s/d 21.00 WITA</span></div></div>
 </header>
 
 <h2 style="font-size: 20px; text-align: center; margin: 16px 0;">Pilih Menu Favoritmu</h2>
@@ -187,30 +104,23 @@ header { padding-top: 70px; text-align: center; }
 </div>
 </div>
 
-<!-- FOOTER RINCIAN + TOMBOL -->
 <div id="orderFooter" class="order-footer">
-  <div id="orderSummary" class="order-summary">
-    <h3>📝 Rincian Pesanan</h3>
-    <div id="orderList"></div>
-    <div id="orderTotal" class="order-total"></div>
-  </div>
+  <div id="orderSummary" class="order-summary"><h3>📝 Rincian Pesanan</h3><div id="orderList"></div><div id="orderTotal" class="order-total"></div></div>
   <button id="btnKirim" onclick="kirimWA()" class="btn-primary">🛒 Kirim Pesanan - <span id="total">Rp 0</span></button>
 </div>
 
 </div>
 </div>
 
+<!-- CUMA 1 AUDIO BUAT CHIME -->
+<audio id="notifSound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+
 <script>
 const items = ['kejuLovers','mixTopping','coklatMocarella','beef','coklatKejuCedar','chicken','corncheese','sosisJamur','sosisBesar','beefSlice','sosisKecil'];
 const nama = ['Keju Lovers','Mix Topping','Coklat Mocarella','Beef','Coklat Keju Cedar','Chicken','Corn Cheese','Sosis Jamur','Sosis Besar','Beef Slice','Sosis Kecil'];
 const harga = [43000,38000,36000,33000,31000,30000,29000,29000,28000,25000,23000];
 
-window.onload = function() {
-  loadPesanan();
-  hitungTotal();
-  cekJamBuka();
-  setInterval(cekJamBuka, 60000);
-}
+window.onload = function() { loadPesanan(); hitungTotal(); cekJamBuka(); setInterval(cekJamBuka, 60000); }
 
 function tambah(item) { var el = document.getElementById(item); el.innerText = parseInt(el.innerText) + 1; simpanPesanan(); hitungTotal(); }
 function kurang(item) { var el = document.getElementById(item); var val = parseInt(el.innerText); if(val > 0) { el.innerText = val - 1; simpanPesanan(); hitungTotal(); } }
@@ -227,7 +137,26 @@ function hitungTotal() {
 }
 
 function simpanPesanan() { var data = {}; for(var i=0; i<items.length; i++) { data[items[i]] = document.getElementById(items[i]).innerText; } localStorage.setItem('pesananPizza', JSON.stringify(data)); }
-function loadPesanan() { var data = JSON.parse(localStorage.getItem('pesananPizza')); if(data) { for(var i=0; i<items.length; i++) { if(data[items[i]]) document.getElementById(items[i]).innerText = data[items[i]]; } } }
+function loadPesanan() {
+  var data = JSON.parse(localStorage.getItem('pesananPizza'));
+  if(data) {
+    for(var i=0; i<items.length; i++) {
+      if(data[items[i]]) document.getElementById(items[i]).innerText = data[items[i]];
+    }
+  }
+}
+
+// FUNGSI BARU: BICARA PAKE SUARA HP
+function ngomong(teks) {
+  if ('speechSynthesis' in window) {
+    speechSynthesis.cancel(); // hentikan yg lama
+    var ucapan = new SpeechSynthesisUtterance(teks);
+    ucapan.lang = 'id-ID'; // Bahasa Indonesia
+    ucapan.rate = 1; // Kecepatan normal
+    ucapan.pitch = 1; // Nada normal
+    speechSynthesis.speak(ucapan);
+  }
+}
 
 function kirimWA() {
   var totalItem = 0; var subtotal = 0;
@@ -237,46 +166,37 @@ function kirimWA() {
     if(jml > 0) { totalItem += jml; subtotal += jml * harga[i]; teks += '- Pizza ' + nama[i] + ' x' + jml + ' = Rp ' + (jml*harga[i]).toLocaleString('id-ID') + '\n'; }
   }
   if(totalItem === 0) { alert('PILIH MENU KI DULU!!!'); return; }
+
+  // 1. BUNYI CHIME
+  var audio = document.getElementById('notifSound');
+  audio.currentTime = 0;
+  audio.play().catch(function(e){});
+
+  // 2. BICARA "TERIMA KASIH" 0.5 DETIK KEMUDIAN
+  setTimeout(function(){
+    ngomong("Terima kasih atas pesanannya");
+  }, 500);
+
   teks += '\nTotal Bayar: Rp ' + subtotal.toLocaleString('id-ID');
   window.open('https://wa.me/6285123850019?text=' + encodeURIComponent(teks), '_blank');
   tampilkanPopup();
   for(var i=0; i<items.length; i++) document.getElementById(items[i]).innerText = '0';
-  localStorage.removeItem('pesananPizza');
-  hitungTotal();
+  localStorage.removeItem('pesananPizza'); hitungTotal();
 }
 
-function balikAwal() {
-  document.getElementById('page1').style.display = 'flex';
-  document.getElementById('page2').style.display = 'none';
-  document.getElementById('orderFooter').style.display = 'none'; // sembunyikan footer
-  document.getElementById('mainContainer').classList.remove('page2-active'); // hapus padding
-}
-function bukaMenu() {
-  document.getElementById('page1').style.display = 'none';
-  document.getElementById('page2').style.display = 'flex';
-  document.getElementById('orderFooter').style.display = 'block'; // munculkan footer
-  document.getElementById('mainContainer').classList.add('page2-active'); // kasih padding
-}
+function balikAwal() { document.getElementById('page1').style.display = 'flex'; document.getElementById('page2').style.display = 'none'; }
+function bukaMenu() { document.getElementById('page1').style.display = 'none'; document.getElementById('page2').style.display = 'block'; }
 
 function cekJamBuka() {
-  var sekarang = new Date().getHours();
-  var statusText = '';
-  var statusToko = document.getElementById('statusToko');
-  var statusToko2 = document.getElementById('statusToko2');
-  var statusTxt1 = document.getElementById('statusText');
-  var statusTxt2 = document.getElementById('statusText2');
-
+  var sekarang = new Date().getHours(); var statusText = '';
+  var statusToko = document.getElementById('statusToko'); var statusToko2 = document.getElementById('statusToko2');
+  var statusTxt1 = document.getElementById('statusText'); var statusTxt2 = document.getElementById('statusText2');
   if (sekarang >= 10 && sekarang < 21) {
-    statusText = 'BUKA - 10.00 s/d 21.00 WITA';
-    statusToko.classList.remove('tutup');
-    if(statusToko2) statusToko2.classList.remove('tutup');
+    statusText = 'BUKA - 10.00 s/d 21.00 WITA'; statusToko.classList.remove('tutup'); if(statusToko2) statusToko2.classList.remove('tutup');
   } else {
-    statusText = 'TUTUP - Buka jam 10.00 WITA';
-    statusToko.classList.add('tutup');
-    if(statusToko2) statusToko2.classList.add('tutup');
+    statusText = 'TUTUP - Buka jam 10.00 WITA'; statusToko.classList.add('tutup'); if(statusToko2) statusToko2.classList.add('tutup');
   }
-  statusTxt1.innerText = statusText;
-  if(statusTxt2) statusTxt2.innerText = statusText;
+  statusTxt1.innerText = statusText; if(statusTxt2) statusTxt2.innerText = statusText;
 }
 
 function tampilkanPopup() { document.getElementById('popupSukses').style.display = 'flex'; }
@@ -285,10 +205,9 @@ function tutupPopup() { document.getElementById('popupSukses').style.display = '
 
 <div id="popupSukses" class="popup-overlay">
   <div class="popup-box">
-    <div class="popup-icon">🎉</div>
-    <h2>Pesanan Terkirim!</h2>
+    <div class="popup-icon">🎉</div><h2>Pesanan Terkirim!</h2>
     <p>Terima Kasih sudah melakukan pembelian di<br>Pizza Malakue Parepare</p>
-    <p class="popup-doa">Semoga Selalu Diberikan Kesehatan Sekeluarga dari ALLAH Yang Maha Kuasa, Rezekinya Lancar Berkah Buat Sekeluarga & Dipermudah Segala Urusanya!!!</p>
+    <p class="popup-doa">Semoga Selalu diberikan Kesehatan Sekeluarga dari ALLAH Yang Maha Kuasa, Rezekinya Lancar Berkah Buat Sekeluarga & Dipermudah Segala Urusannya<br></p>
     <button class="popup-btn" onclick="tutupPopup()">Aamiiin 🙏</button>
   </div>
 </div>
